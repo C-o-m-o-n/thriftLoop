@@ -10,11 +10,11 @@ import {
   Button,
   View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import {auth} from './/../firebase';
+//import {auth} from './/../firebase';
 
-export default function Login() {
+export default function Login({ navigation }) {
   function onPress(){
-    Alert.alert("pressed")
+    navigation.navigate("Home")
   }
 
   const handleSignup = () =>{

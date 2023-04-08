@@ -8,21 +8,27 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import Home from './/../screens/Home'
 import Settings from './/../screens/Settings'
 import Login from './/../screens/Login'
+import OnboardingScreen from './/../screens/OnboardingScreen'
 
 
-function HomeScreen(){
+function HomeScreen({navigation}){
   return(
-  <Home />
+  <Home navigation={navigation}/>
   )
 }
-function SettingsScreen (){
+function Onboardingscreen({navigation}){
   return(
-  <Settings />
+  <OnboardingScreen navigation={navigation}/>
   )
 }
-function LoginScreen (){
+function SettingsScreen ({navigation}){
   return(
-  <Login />
+  <Settings navigation={navigation} />
+  )
+}
+function LoginScreen ({navigation}){
+  return(
+  <Login navigation={navigation} />
   )
 }
 
@@ -34,6 +40,9 @@ export default function AppNavigator(){
     <Tab.Navigator>
       <Tab.Screen name="Home" component={HomeScreen} options={{tabBarIcon: ({ tintColor }) => (
           <Ionicons name="home" size={20} color="teal" />
+        )}} />
+      <Tab.Screen name="Onboarding" component={Onboardingscreen} options={{tabBarIcon: ({ tintColor }) => (
+          <Ionicons name="rocket" size={20} color="teal" />
         )}} />
       <Tab.Screen name="Login" component={LoginScreen} options={{tabBarIcon: ({ tintColor }) => (
           <Ionicons name="log-in" size={20} color="teal" />

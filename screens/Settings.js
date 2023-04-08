@@ -1,10 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
+import {React, useState } from 'react';
 import { 
   StyleSheet,
   Text,
   View,
   Image,
+  Modal,
+  Alert,
   ScrollView,
+  Dimensions,
   TouchableOpacity,
 } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -12,7 +16,8 @@ import profilePic from './/../assets/robo-head.jpg'
 import SettingsItem from './/../components/SettingsItem'
 import SettingsProfile from './/../components/SettingsProfile'
 
-export default function Settings() {
+export default function Settings({navigation}) {
+  
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -52,7 +57,7 @@ export default function Settings() {
            <Text style={styles.activityNum}>98</Text>
         </View>
       </View>
-      
+
       <View style={{margin:8,}}>
       </View>
       
