@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import {React, useState} from 'react';
+import {React, useEffect, useState} from 'react';
 import {
   StyleSheet,
   Text,
@@ -10,27 +10,36 @@ import {
   Button,
   View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
-//import {auth} from './/../firebase';
+
+function cerateDb(id=0, email, password) {
+  
+};
+
+let users = [
+  {
+    "id":1,
+    "email":'comon928@gmail.com',
+    "password":'12345678',
+  },
+  
+  ]
 
 export default function Login({ navigation }) {
+  
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  
   function onPress(){
     navigation.navigate("Home")
   }
 
   const handleSignup = () =>{
-    try {
-      /* code */
-      auth.createUserWithEmailAndPassword(email, password).then(userCredentials =>{
-      const user = userCredentials.user;
-      console.log(user.email);
-    });
-    } catch (e) {
-      alert(e.message);
-    };
-    
+    users.push({'id':users.length+1, 'email':email, 'password':password})
+    users=users
+    console.log('added');
+    console.log(users);
   }
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+
   return (
     <KeyboardAvoidingView
       style={styles.container}
@@ -62,7 +71,7 @@ export default function Login({ navigation }) {
          </Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={()=> Alert.alert("handleSignup")}
+          onPress={handleSignup}
           style={styles.button}
         >
           <Text

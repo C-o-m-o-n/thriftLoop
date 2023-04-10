@@ -16,9 +16,12 @@ import profilePic from './/../assets/robo-head.jpg'
 import SettingsItem from './/../components/SettingsItem'
 import SettingsProfile from './/../components/SettingsProfile'
 
+
+
 export default function Settings({navigation}) {
   
   return (
+    
     <View style={styles.container}>
       <ScrollView>
       
@@ -60,19 +63,23 @@ export default function Settings({navigation}) {
 
       <View style={{margin:8,}}>
       </View>
-      
-        <SettingsItem ItemIcon="infinite" ItemText="Account Settings"/>
+        <SettingsItem navigation={navigation} ItemIcon="infinite" ItemText="Account Settings"/>
         <SettingsItem ItemIcon="person" ItemText="Profile Settings"/>
         <SettingsItem ItemIcon="umbrella" ItemText="Items Settings"/>
         <SettingsItem ItemIcon="earth" ItemText="Organization Settings"/>
         <SettingsItem ItemIcon="fast-food" ItemText="Market Settings"/>
         <SettingsItem ItemIcon="star-half" ItemText="Review Settings"/>
-        
+         </Stack.Navigator>
       </ScrollView>
       <StatusBar style="auto" />
     </View>
   );
 }
+
+
+
+
+
 
 const styles = StyleSheet.create({
   container: {

@@ -7,6 +7,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 
 import Home from './/../screens/Home'
 import Settings from './/../screens/Settings'
+
 import Login from './/../screens/Login'
 import OnboardingScreen from './/../screens/OnboardingScreen'
 
