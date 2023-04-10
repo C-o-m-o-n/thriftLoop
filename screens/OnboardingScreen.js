@@ -3,6 +3,7 @@ import { StyleSheet, Image,Text, View } from 'react-native';
 import {LinearGradient} from 'expo-linear-gradient';
 
 import donate from './/../assets/donate.jpg'
+import staff from './/../assets/staff.png'
 import market from './/../assets/market.jpg'
 import recycle from './/../assets/recycle.jpg'
 import vector from './/../assets/vector.jpg'
@@ -15,10 +16,10 @@ export default function OnboardingScreen({navigation}) {
       onDone={()=>navigation.navigate("Home")}
       pages={[
         {
-          backgroundColor: '#6dd6cbc3',
-          image: <Image style={styles.onbordimg} source={vector} />,
-          title: 'Welcome to ThriftLoop',
-          subtitle: 'Do you have so many staff you do not use at home, work, or school,and have no idea on what to do with them?.' ,
+          backgroundColor: 'teal',
+          image: <Image style={styles.onbordimg} source={staff} />,
+          title: 'Problem ',
+          subtitle: 'Do you have so many staff you do not use ,and have no idea on what to do with them?.' ,
         },
         {
           backgroundColor: '#db9e15b7',

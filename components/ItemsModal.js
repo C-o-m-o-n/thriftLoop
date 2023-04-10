@@ -12,6 +12,9 @@ export default function ProfileModal() {
       <View >
       <View style={styles.dtl}>
            <Text>items screen</Text>
+           <Text>items screen</Text>
+           <Text>items screen</Text>
+           <Text>items screen</Text>
            
       </View>
       </View>

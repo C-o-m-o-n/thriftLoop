@@ -63,13 +63,13 @@ export default function Settings({navigation}) {
 
       <View style={{margin:8,}}>
       </View>
-        <SettingsItem navigation={navigation} ItemIcon="infinite" ItemText="Account Settings"/>
+        <SettingsItem ItemIcon="infinite" ItemText="Account Settings"/>
         <SettingsItem ItemIcon="person" ItemText="Profile Settings"/>
         <SettingsItem ItemIcon="umbrella" ItemText="Items Settings"/>
         <SettingsItem ItemIcon="earth" ItemText="Organization Settings"/>
         <SettingsItem ItemIcon="fast-food" ItemText="Market Settings"/>
         <SettingsItem ItemIcon="star-half" ItemText="Review Settings"/>
-         </Stack.Navigator>
+        
       </ScrollView>
       <StatusBar style="auto" />
     </View>

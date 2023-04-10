@@ -26,7 +26,7 @@ export default function SettingsItem(props) {
   if (props.ItemText=="Account Settings") {
     return (
     <TouchableOpacity
-      onPress={()=>{props.navigation.navigate("AccountSettings")}}
+    onPress={()=>{setModalVisible(!modalVisible)}}
       style={styles.sttItem}
       >
       <View 
@@ -35,6 +35,30 @@ export default function SettingsItem(props) {
         <Ionicons style={styles.itemIcon} name={props.ItemIcon} />
         <Text style={styles.sttItemText}>{props.ItemText}</Text>
       </View>
+             <Modal
+      transparent={!true}
+      animationType='fade'
+      visible={modalVisible}
+      onRequestClose={() => {
+        Alert.alert('Modal has been closed.');
+        setModalVisible(!modalVisible);
+      }}>
+      <View >
+             <AccountModal/>
+        <View style={styles.modalBottom}>
+        <TouchableOpacity
+          style={styles.bottomBtn}
+          onPress={()=>{
+            setModalVisible(!modalVisible)}}>
+        <Text>Cancel</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.bottomBtn}>
+          <Text>Save</Text>
+          </TouchableOpacity>
+        </View>
+        </View>
+        </Modal>
     </TouchableOpacity>
   
     );

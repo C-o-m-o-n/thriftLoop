@@ -2,39 +2,24 @@ import { StatusBar } from 'expo-status-bar';
 import { 
   StyleSheet,
   Text,
+  Image,
   TouchableOpacity,
   Dimensions,
   View } from 'react-native';
+import thrifty from './/../assets/logo.png';
 
 export default function AccountModal() {
   return (
       
-      <View >
-      <View style={styles.dtl}>
-           <Text>AccountModal screen</Text>
-           <Text>Name: Collins Omondi</Text>
-                <TouchableOpacity
-              style={styles.UpdateBtn}
-              >
-              <Text>Update</Text>
-          </TouchableOpacity>
+      <View style={styles.container}>
+      <View style={styles.thriftyImgContainer} >
+        <Image
+          style={styles.thriftyImg}
+          source={thrifty} />
       </View>
-      <View style={styles.dtl}>
-           <Text>Email: comon928@gmail.com</Text>
-                <TouchableOpacity
-              style={styles.UpdateBtn}
-              >
-              <Text>Update</Text>
-          </TouchableOpacity>
-      </View>
-      <View style={styles.dtl}>
-           <Text>Pasaword: colr;fmon9d;f28@kkd.;pp</Text>
-                <TouchableOpacity
-              style={styles.UpdateBtn}
-              >
-              <Text>Update</Text>
-          </TouchableOpacity>
-      </View>
+        <View style={styles.txt}>
+           <Text>My first text</Text>
+        </View>
 
         <TouchableOpacity style={styles.deleteBtn}>
               <Text>delete Account</Text>
@@ -47,10 +32,26 @@ export default function AccountModal() {
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop:10,
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#efefef',
+    
+  },
+  thriftyImgContainer:{
+    flexDirection: 'row',
+    padding: 2,
+    marginTop:5,
+    marginTop:150,
+  },
+  txt:{
+    color:'red',
+  },
+  thriftyImg: {
+    resizeMode: 'contain',
+    height: 200,
+    width: 300,
+    alignSelf:'center',
+    marginHorizontal:33,
   },
   dtl:{
     width:200,
