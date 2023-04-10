@@ -10,28 +10,30 @@ import {
   Button,
   View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
-//import {auth} from './/../firebase';
+
+let users = [
+  {
+    "id":1,
+    "email":'comon928@gmail.com',
+    "password":'12345678',
+  },
+  
+  ]
 
 export default function Login({ navigation }) {
   function onPress(){
     navigation.navigate("Home")
   }
-
-  const handleSignup = () =>{
-    try {
-      /* code */
-      auth.createUserWithEmailAndPassword(email, password).then(userCredentials =>{
-      const user = userCredentials.user;
-      console.log(user.email);
-    });
-    } catch (e) {
-      alert(e.message);
-    };
-    
-  }
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  return (
+ const handleSignup = () =>{
+    users.push({'id':users.length+1, 'email':email, 'password':password})
+    users=users
+    console.log('added');
+    console.log(users);
+  }
+ return (
     <KeyboardAvoidingView
       style={styles.container}
       behaviour="padding"
