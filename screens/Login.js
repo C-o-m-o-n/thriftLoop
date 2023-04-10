@@ -11,6 +11,7 @@ import {
   View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
+
 function cerateDb(id=0, email, password) {
   
 };
@@ -33,14 +34,25 @@ export default function Login({ navigation }) {
     navigation.navigate("Home")
   }
 
+
   const handleSignup = () =>{
+
+  
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+ const handleSignup = () =>{
+
     users.push({'id':users.length+1, 'email':email, 'password':password})
     users=users
     console.log('added');
     console.log(users);
   }
 
+
   return (
+
+ return (
+
     <KeyboardAvoidingView
       style={styles.container}
       behaviour="padding"
